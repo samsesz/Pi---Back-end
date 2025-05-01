@@ -8,6 +8,9 @@ import UsuariosController from "./controllers/UsuariosController.js";
 import EstatisticasController from "./controllers/EstatisticasController.js";
 import CheckpointsController from "./controllers/CheckpointsController.js";
 
+// Dados vindos dos formularios
+app.use(express.urlencoded({ extended: false}))
+app.use(express.json())
 // Define o EJS como Renderizador de páginas
 app.set("view engine", "ejs");
 // Define o uso da pasta "public" para uso de arquivos estáticos

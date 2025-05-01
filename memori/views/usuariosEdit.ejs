@@ -8,7 +8,7 @@
     <div class="cadastrar">
         <h4> Cadastrar novo Usuário </h4>
         <hr>
-        <form action="/usuarios/new" method="POST">
+        <form action="/clientes/new" method="POST">
             <div class="inserir-dados">
             <label> Nome:</label>
             <input type="text" name="nome" placeholder="Digite o nome completo" class="form-input" required>
@@ -28,40 +28,12 @@
             <div class="div-botao">
                 <button name="cadastrar-usuario" class="button-cadastro"> Cadastrar </button>
             </div>
+            <br>
+            <input type="hidden" name="id" value="<%= usuario.id %>">
+            <input type="submit" class="btn btn-warning" value="Alterar" onclick="return confirm (`Confirme as alterações
+            realizadas para o usuario <%= usuario.nome %>?`)">
             </div>
         </form>
     </div>
-
-
-    <div class="consultar">
-        <h4> Consultar Usuários </h4>
-        <table>
-          <thead>
-            <th> Id </th>
-            <th> Nome </th>
-            <th> Nome de usuário </th>
-            <th> E-mail </th>
-            <th> Permissões </th>
-            <th style="text-align: center;" colspan="2">Ações:</th>
-          </thead>
-            <tr>
-                <td>a</td>
-                <td>Larissa</td>
-                <td>ltoyohashi</td>
-                <td>ltoyohashi@gmail.com</td>
-                <td>e</td>
-                <td>
-                    <Button name="editar-usuario" class="btn-editar"> <i class = "fas fa-pencil"></i></Button>
-                </td>
-                <td>
-                    <Button name="excluir-usuario" class="btn-excluir"> <i class = "fas fa-cancel"></i></Button>
-                </td>
-            </tr>
-            
-        </table>
-    </div>
-</div>
-    
-</div>
 
 <%- include ('partials/footer.ejs') %>
