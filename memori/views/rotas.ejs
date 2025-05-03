@@ -53,6 +53,20 @@
                 <th> Capa </th>
                 <th style="text-align: center;" colspan="2">Ações:</th>
               </thead>
+              <tbody>
+                <% rotas.forEach(rota => { %>
+                <tr>
+                    <td><%= rota.tituloRota %></td>
+                    <td><%= rota.cidadeLocalizada %></td>
+                    <td><%= rota.longitudeRota %></td>
+                    <td><%= rota.latitudeRota %></td>
+                    <td><%= rota.imagemCapa %></td>
+                    <td><%= rota.descricaoRota %></td>
+                    <td><a style="color: orange;" href="/rotas/edit/<%= rota.tituloRota %>">Editar</a></td>
+                    <td><a style="color: red;" href="/rotas/delete/<%= rota.tituloRota %>">Excluir</a></td>
+                </tr>
+                <% }) %>
+              </tbody>
                 <tr>
                     <td>a</td>
                     <td>KKKK</td>

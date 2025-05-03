@@ -44,6 +44,19 @@
             <th> Permissões </th>
             <th style="text-align: center;" colspan="2">Ações:</th>
           </thead>
+          <tbody>
+            <% usuarios.forEach(usuario => { %>
+            <tr>
+                <td><%= usuario.nome %></td>
+                <td><%= usuario.nomeUsuario %></td>
+                <td><%= usuario.emailUsuario %></td>
+                <td><%= usuario.senhaUsuario %></td>
+                <td><%= usuario.permissao %></td>
+                <td><a style="color: orange;" href="/usuarios/edit/<%= usuario.nomeUsuario %>">Editar</a></td>
+                <td><a style="color: red;" href="/usuarios/delete/<%= usuario.nomeUsuario %>">Excluir</a></td>
+            </tr>
+            <% }) %>
+          </tbody>
             <tr>
                 <td>a</td>
                 <td>Larissa</td>

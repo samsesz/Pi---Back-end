@@ -59,6 +59,19 @@
                 <th> Imagem </th>
                 <th style="text-align: center;" colspan="2">Ações:</th>
               </thead>
+              <tbody>
+                <% checkpoints.forEach(checkpoint => { %>
+                <tr>
+                    <td><%= checkpoint.nomeCheckpoint %></td>
+                    <td><%= checkpoint.lagitudeCheckpoint %></td>
+                    <td><%= checkpoint.longitudeCheckpoint %></td>
+                    <td><%= checkpoint.tituloRota %></td>
+                    <td><%= checkpoint.descricaoCheckpoint %></td>
+                    <td><a style="color: orange;" href="/checkpoints/edit/<%= checkpoint.nomeCheckpoint %>">Editar</a></td>
+                    <td><a style="color: red;" href="/checkpoints/delete/<%= checkpoint.nomeCheckpoint %>">Excluir</a></td>
+                </tr>
+                <% }) %>
+              </tbody>
                 <tr>
                     <td>a</td>
                     <td>KKKK</td>

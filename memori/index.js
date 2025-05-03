@@ -7,6 +7,20 @@ import RotasController from "./controllers/RotasController.js";
 import UsuariosController from "./controllers/UsuariosController.js";
 import EstatisticasController from "./controllers/EstatisticasController.js";
 import CheckpointsController from "./controllers/CheckpointsController.js";
+// Importando o Sequelize
+import Sequelize from ".config/sequelize-config.js"
+// Conexão com o banco
+connection.authenticate().then(() => {
+  console.log("Conexão com o banco de dados feita com sucesso!")
+}).catch((error) => {
+  console.log(error)
+});
+// Criando banco de dados 
+connection.query(`CREATE DATABASE IF NOT EXISTS memori;`).then(() => {
+  console.log("O banco de dados foi criado.")
+}).catch((error) => {
+  console.log(error)
+});
 
 // Dados vindos dos formularios
 app.use(express.urlencoded({ extended: false}))
